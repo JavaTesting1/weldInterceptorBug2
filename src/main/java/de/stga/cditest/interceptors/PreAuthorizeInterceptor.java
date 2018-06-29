@@ -16,6 +16,7 @@ public class PreAuthorizeInterceptor implements Serializable {
 
     @AroundInvoke
     public Object intercept(final InvocationContext invocationContext) throws Exception {
+        System.out.println("INTERCEPTED");
         throw new RuntimeException("Expected Exception");
     }
 
