@@ -1,0 +1,55 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>de.stga</groupId>
+    <artifactId>cditest2</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>war</packaging>
+
+    <dependencies>
+
+        <!-- https://mvnrepository.com/artifact/junit/junit -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
+    <properties>
+        <failOnMissingWebXml>false</failOnMissingWebXml>
+    </properties>
+
+    <profiles>
+
+        <profile>
+            <id>weld2</id>
+            <dependencies>
+                <!-- https://mvnrepository.com/artifact/org.jboss.weld.se/weld-se-core -->
+                <dependency>
+                    <groupId>org.jboss.weld.se</groupId>
+                    <artifactId>weld-se-core</artifactId>
+                    <version>2.4.5.Final</version>
+                </dependency>
+            </dependencies>
+
+        </profile>
+
+        <profile>
+            <id>weld3</id>
+            <dependencies>
+                <!-- https://mvnrepository.com/artifact/org.jboss.weld.se/weld-se-core -->
+                <dependency>
+                    <groupId>org.jboss.weld.se</groupId>
+                    <artifactId>weld-se-core</artifactId>
+                    <version>3.0.4.Final</version>
+                </dependency>
+            </dependencies>
+        </profile>
+
+    </profiles>
+
+</project>
