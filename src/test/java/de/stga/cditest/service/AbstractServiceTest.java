@@ -1,5 +1,9 @@
 package de.stga.cditest.service;
 
+import static org.junit.Assert.assertThat;
+import static org.junit.Assert.fail;
+
+import org.hamcrest.CoreMatchers;
 import org.jboss.weld.environment.se.Weld;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -28,7 +32,14 @@ public abstract class AbstractServiceTest<S extends SuperParam> {
 
     @Test
     public void testInterception() {
-        this.getCurrentService().doSomething(this.getEntity());
+
+        try {
+            this.getCurrentService().doSomething(this.getEntity());
+            fail("RuntimeException is expected");
+        } catch (RuntimeException e) {
+            assertThat(e.getMessage(), CoreMatchers.is("Expected Exception"));
+        }
+
     }
 
 }
