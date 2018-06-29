@@ -1,6 +1,6 @@
 # weldInterceptorBug2
 
-## Project containing unit test which shows not working interception in weld 3
+## Project containing a unit test which shows not working interception in weld 3
 
 ### Project setup
 
